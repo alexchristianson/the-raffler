@@ -24,7 +24,12 @@ const userSchema = new Schema({
     required: true,
     minlength: 5
   },
-  
+  raffleTickets: {
+    type: Array
+  },
+  rafflesWon: {
+    type: Array
+  }
 });
 
 // set up pre-save middleware to create password
