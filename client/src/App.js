@@ -1,8 +1,10 @@
-import Login from "./pages/Login";
+import Nav from "./components/Nav";
 
 function App() {
   return (
-    <Login></Login>
+    <div>
+      <Nav></Nav>
+    </div>
   );
 }
 
