@@ -2,7 +2,7 @@ import { Button, TextField, Grid } from '@mui/material';
 
 
 function LoginForm () {
-    function handleSignIn() {
+    function handleLogin() {
         console.log('submitted correct');
     }
     return (
@@ -16,13 +16,13 @@ function LoginForm () {
             <h1 style={{paddingBottom: 20}}>Login</h1>
                 <form 
                 noValidate
-                onSubmit={handleSignIn}
+                onSubmit={handleLogin}
                 autoComplete='on'
                 style={{display: 'flex', flexDirection: 'column', width: '100%'}}
             >
                 <TextField
                     name='username'
-                    id='signin-username'
+                    id='login-username'
                     label='Username'
                     required
                     autoFocus
@@ -32,7 +32,7 @@ function LoginForm () {
                 />
                 <TextField
                     name='password'
-                    id='signin-password'
+                    id='login-password'
                     type='password'
                     label='Password'
                     required

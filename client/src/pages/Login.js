@@ -1,5 +1,5 @@
 import LoginForm from "../components/LoginForm";
-import {Grid, Button} from '@mui/material';
+import {Grid} from '@mui/material';
 
 function Login () {
     return (
@@ -18,9 +18,6 @@ function Login () {
                 justifyContent='space-between'
             >
                 <LoginForm/>
-                <Button sx={{ mt: 2, fontSize: '1.1em'}} fullWidth varient='outlined'>
-                    <a href="/signup">Create an Account</a>
-                </Button>
             </Grid>
         </Grid>
     )
