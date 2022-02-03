@@ -84,7 +84,7 @@ function SignUpForm () {
                         fullWidth
                         sx={{ mt: 3, fontSize:'1.2em'}}
                     >
-                        Have an Account Login
+                        Have an Account? Login
                     </Button>
                 </a>
             </form>
