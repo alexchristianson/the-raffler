@@ -1,9 +1,15 @@
-import { Button, TextField, Grid } from '@mui/material';
+import { Button, TextField, Grid, Snackbar } from '@mui/material';
 
 
 function LoginForm () {
     function handleLogin() {
-        console.log('submitted correct');
+        return (
+            <Snackbar 
+                severity='success'
+                autoHideDuration={5000}
+                message='Login Successful'
+            />
+        )
     }
     return (
         <Grid
