@@ -61,7 +61,7 @@ const Nav = () =>{
         [PLACEHOLDER]
     </li>
     <li className='login-btn'>
-        Login
+        <a href='/login'>Login</a>
     </li>
 </ul>
 </nav>
