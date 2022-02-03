@@ -8,13 +8,15 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+:root {
+  --primary-color: #0e2a47;
+}
 
 /* nav area */
 .nav-container {
   background-color: rgb(255, 255, 255);
   height: 100px;
   box-shadow: 1px 1px 8px 1px rgb(213, 213, 213);
-  width: 100%;
 }
 .nav-items {
   list-style-type: none;
@@ -30,6 +32,7 @@
   margin-right: 1rem;
   color: rgb(95, 95, 95);
   transition: 0.5s;
+  float: right;
 }
 
 .login-btn {
@@ -37,7 +40,7 @@
   padding: 0.7em 1.7em;
   font-size: 18px;
   border-radius: 0.5em;
-  background: black;
+  background: #0e2a47;
   transition: all 0.3s;
   box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
   margin: 1rem;
