@@ -13,6 +13,7 @@ function LoginForm () {
             justifyContent='space-evenly'
             paddingTop='25px'
         >
+            <h1 style={{paddingBottom: 20}}>Login</h1>
                 <form 
                 noValidate
                 onSubmit={handleSignIn}
@@ -27,6 +28,7 @@ function LoginForm () {
                     autoFocus
                     submitonenter = 'true'
                     autoComplete='username'
+                    style={{paddingBottom: 20}}
                 />
                 <TextField
                     name='password'
@@ -45,6 +47,15 @@ function LoginForm () {
                 >
                     Submit
                 </Button>
+                <a href='/signup' style={{textDecoration: 'none', paddingTop: 5}}>
+                    <Button
+                        variant='contained'
+                        fullWidth
+                        sx={{ mt: 3, fontSize:'1.2em'}}
+                    >
+                        Create an Account
+                    </Button>
+                </a>
             </form>
         </Grid>
     )
