@@ -60,9 +60,10 @@ const Nav = () =>{
     <li>
         [PLACEHOLDER]
     </li>
-    <li className='login-btn'>
-        Login
-    </li>
+    <a href='/login' className='login-btn' style={{textDecoration: 'none'}}>Login</a>
+    {/* <li className='login-btn'>
+        <a href='/login'>Login</a>
+    </li> */}
 </ul>
 </nav>
     )
