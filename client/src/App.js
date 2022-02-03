@@ -1,10 +1,16 @@
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 import Nav from "./components/Nav";
 
 function App() {
   return (
-    <div>
-      <Nav></Nav>
-    </div>
+    <Router>
+      <div>
+          <Nav />
+          <Routes>
+          </Routes>
+      </div>
+    </Router>
   );
 }
 
