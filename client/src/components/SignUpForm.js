@@ -19,6 +19,28 @@ function SignUpForm () {
                 autoComplete='on'
                 style={{display: 'flex', flexDirection: 'column', width: '100%'}}
             >
+                
+                
+                <TextField
+                    name='first-name'
+                    id='signup-firstname'
+                    label='First Name'
+                    required
+                    autoFocus
+                    submitonenter = 'true'
+                    autoComplete='first-name'
+                    style={{paddingBottom: 20}}
+                />
+                <TextField
+                    name='last-name'
+                    id='signup-lastname'
+                    label='Last Name'
+                    required
+                    autoFocus
+                    submitonenter = 'true'
+                    autoComplete='family-name'
+                    style={{paddingBottom: 20}}
+                />
                 <TextField
                     name='email'
                     id='signup-email'
@@ -46,7 +68,7 @@ function SignUpForm () {
                     label='Password'
                     required
                     submitonenter='true'
-                    autoComplete='current-password'
+                    autoComplete='new-password'
                 />
                 <Button
                     type='submit'
