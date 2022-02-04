@@ -6,8 +6,11 @@ function LoginForm () {
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
     function handleLogin(e) {
-        e.preventDefault();
-        console.log(username, password);
+        if(username && password) {
+            console.log(username, password)
+        } else {
+            alert('Please fill in all regions');
+        }
     }
     return (
         <Grid
