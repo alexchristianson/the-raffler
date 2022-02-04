@@ -1,15 +1,29 @@
-import { Button, TextField, Grid, Snackbar } from '@mui/material';
+import { Button, TextField, Grid  } from '@mui/material';
+import { useState } from 'react';
+import { LOGIN } from '../utils/mutations';
+import { useMutation } from '@apollo/client';
+import Auth from '../utils/auth';
 
 
-function LoginForm () {
-    function handleLogin() {
-        return (
-            <Snackbar 
-                severity='success'
-                autoHideDuration={5000}
-                message='Login Successful'
-            />
-        )
+export default function LoginForm () {
+    const [username, setUsername] = useState();
+    const [password, setPassword] = useState();
+    const [login, { error }] = useMutation(LOGIN);
+    async function handleLogin(e) {
+        e.preventDefault();
+        if(username && password) {
+            try{
+                const mutationResponse = await login({
+                    variables: { username: username, password: password}
+                });
+                const token = mutationResponse.data.login.token;
+                Auth.login(token);
+            } catch (e) {
+                console.log(e, 'you are here');
+            }
+        }  else {
+            alert('Please fill in all sections')
+        }
     }
     return (
         <Grid
@@ -35,6 +49,7 @@ function LoginForm () {
                     submitonenter = 'true'
                     autoComplete='username'
                     style={{paddingBottom: 20}}
+                    onChange={(e) => setUsername(e.target.value)}
                 />
                 <TextField
                     name='password'
@@ -44,6 +59,7 @@ function LoginForm () {
                     required
                     submitonenter='true'
                     autoComplete='current-password'
+                    onChange={(e) => setPassword(e.target.value)}
                 />
                 <Button
                     type='submit'
@@ -66,5 +82,3 @@ function LoginForm () {
         </Grid>
     )
 }
-
-export default LoginForm;

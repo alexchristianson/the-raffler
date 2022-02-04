@@ -1,8 +1,34 @@
 import { Button, TextField, Grid } from '@mui/material';
+import { useState } from 'react';
+import Auth from '../utils/auth';
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../utils/mutations';
 
 function SignUpForm () {
-    function handleSignUp() {
-        console.log('submitted correct');
+    const [firstName, setFirstName] = useState();
+    const [lastName, setLastName] = useState();
+    const [email, setEmail ] = useState();
+    const [username, setUsername] = useState();
+    const [password, setPassword] = useState();
+    const [addUser] = useMutation(ADD_USER);
+
+    async function handleSignUp(e) {
+        e.preventDefault();
+        if(firstName && lastName && email && password && username) {
+            const mutationResponse = await addUser({
+                variables:{
+                    firstname: firstName,
+                    lastname: lastName,
+                    email: email,
+                    username: username,
+                    password: password
+                }
+            })
+            const toekn = mutationResponse.data.addUser.token;
+            Auth.login(toekn);
+        } else {
+            alert('Please fill in all sections!')
+        }
     }
     return (
         <Grid
@@ -30,6 +56,7 @@ function SignUpForm () {
                     submitonenter = 'true'
                     autoComplete='first-name'
                     style={{paddingBottom: 20}}
+                    onChange={(e) => setFirstName(e.target.value)}
                 />
                 <TextField
                     name='last-name'
@@ -40,6 +67,7 @@ function SignUpForm () {
                     submitonenter = 'true'
                     autoComplete='family-name'
                     style={{paddingBottom: 20}}
+                    onChange={(e) => setLastName(e.target.value)}
                 />
                 <TextField
                     name='email'
@@ -50,6 +78,7 @@ function SignUpForm () {
                     submitonenter = 'true'
                     autoComplete='email'
                     style={{paddingBottom: 20}}
+                    onChange={(e) => setEmail(e.target.value)}
                 />
                 <TextField
                     name='username'
@@ -60,6 +89,7 @@ function SignUpForm () {
                     submitonenter = 'true'
                     autoComplete='username'
                     style={{paddingBottom: 20}}
+                    onChange={(e) => setUsername(e.target.value)}
                 />
                 <TextField
                     name='password'
@@ -69,6 +99,7 @@ function SignUpForm () {
                     required
                     submitonenter='true'
                     autoComplete='new-password'
+                    onChange={(e) => setPassword(e.target.value)}
                 />
                 <Button
                     type='submit'
