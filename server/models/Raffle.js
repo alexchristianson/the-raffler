@@ -17,6 +17,9 @@ const raffleSchema = new Schema({
   },
   ticketArray: {
       type: Array
+  },
+  timer: {
+      type: Number
   }
 });
 
