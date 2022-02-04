@@ -5,7 +5,6 @@ function Card(props) {
               <img alt={props.name} src={props.image} />
           </div>
           <div className="card-body">
-          
               <h5 className='card-title'>
                   {props.name}
               </h5>
