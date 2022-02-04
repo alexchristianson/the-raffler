@@ -1,15 +1,13 @@
-import { Button, TextField, Grid, Snackbar } from '@mui/material';
+import { Button, TextField, Grid  } from '@mui/material';
+import { useState } from 'react';
 
 
 function LoginForm () {
-    function handleLogin() {
-        return (
-            <Snackbar 
-                severity='success'
-                autoHideDuration={5000}
-                message='Login Successful'
-            />
-        )
+    const [username, setUsername] = useState();
+    const [password, setPassword] = useState();
+    function handleLogin(e) {
+        e.preventDefault();
+        console.log(username, password);
     }
     return (
         <Grid
@@ -35,6 +33,7 @@ function LoginForm () {
                     submitonenter = 'true'
                     autoComplete='username'
                     style={{paddingBottom: 20}}
+                    onChange={(e) => setUsername(e.target.value)}
                 />
                 <TextField
                     name='password'
@@ -44,6 +43,7 @@ function LoginForm () {
                     required
                     submitonenter='true'
                     autoComplete='current-password'
+                    onChange={(e) => setPassword(e.target.value)}
                 />
                 <Button
                     type='submit'

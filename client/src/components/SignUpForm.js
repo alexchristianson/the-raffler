@@ -1,8 +1,16 @@
 import { Button, TextField, Grid } from '@mui/material';
+import { useState } from 'react';
 
 function SignUpForm () {
-    function handleSignUp() {
-        console.log('submitted correct');
+    const [fistName, setFirstName] = useState();
+    const [lastName, setLastName] = useState();
+    const [email, setEmail ] = useState();
+    const [username, setUsername] = useState();
+    const [password, setPassword] = useState();
+
+    function handleSignUp(e) {
+        e.preventDefault();
+        console.log(fistName, lastName, email, username, password);
     }
     return (
         <Grid
@@ -30,6 +38,7 @@ function SignUpForm () {
                     submitonenter = 'true'
                     autoComplete='first-name'
                     style={{paddingBottom: 20}}
+                    onChange={(e) => setFirstName(e.target.value)}
                 />
                 <TextField
                     name='last-name'
@@ -40,6 +49,7 @@ function SignUpForm () {
                     submitonenter = 'true'
                     autoComplete='family-name'
                     style={{paddingBottom: 20}}
+                    onChange={(e) => setLastName(e.target.value)}
                 />
                 <TextField
                     name='email'
@@ -50,6 +60,7 @@ function SignUpForm () {
                     submitonenter = 'true'
                     autoComplete='email'
                     style={{paddingBottom: 20}}
+                    onChange={(e) => setEmail(e.target.value)}
                 />
                 <TextField
                     name='username'
@@ -60,6 +71,7 @@ function SignUpForm () {
                     submitonenter = 'true'
                     autoComplete='username'
                     style={{paddingBottom: 20}}
+                    onChange={(e) => setUsername(e.target.value)}
                 />
                 <TextField
                     name='password'
@@ -69,6 +81,7 @@ function SignUpForm () {
                     required
                     submitonenter='true'
                     autoComplete='new-password'
+                    onChange={(e) => setPassword(e.target.value)}
                 />
                 <Button
                     type='submit'
