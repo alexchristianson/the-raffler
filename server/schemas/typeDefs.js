@@ -6,6 +6,7 @@ const typeDefs = gql`
     firstName: String
     lastName: String
     email: String
+    username: String
     raffleTickets: Array
     rafflesWon: Array
   }
@@ -33,8 +34,8 @@ const typeDefs = gql`
 
 
   type Mutation {
-    login(email: String!, password: String!): Auth
-    addUser(firstName: String!, lastName: String!,  email: String!, password: String!): Auth
+    login(username: String!, password: String!): Auth
+    addUser(firstName: String!, lastName: String!,  email: String!, username: String!, password: String!): Auth
     
   }
 `;
