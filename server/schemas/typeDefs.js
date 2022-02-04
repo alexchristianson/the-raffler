@@ -33,7 +33,6 @@ const typeDefs = gql`
     users: [User]
     user(username: String!): User
     raffleTickets(username: String): [Ticket]
-    raffleTgit aicket(_id: ID!): Ticket
   }
 
 
