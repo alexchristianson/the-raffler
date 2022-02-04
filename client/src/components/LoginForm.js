@@ -6,10 +6,11 @@ function LoginForm () {
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
     function handleLogin(e) {
+        e.preventDefault();
         if(username && password) {
             console.log(username, password)
         } else {
-            alert('Please fill in all regions');
+            alert('Please fill in all sections');
         }
     }
     return (
