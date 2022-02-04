@@ -2,7 +2,7 @@ import { Button, TextField, Grid } from '@mui/material';
 import { useState } from 'react';
 
 function SignUpForm () {
-    const [fistName, setFirstName] = useState();
+    const [firstName, setFirstName] = useState();
     const [lastName, setLastName] = useState();
     const [email, setEmail ] = useState();
     const [username, setUsername] = useState();
@@ -10,7 +10,11 @@ function SignUpForm () {
 
     function handleSignUp(e) {
         e.preventDefault();
-        console.log(fistName, lastName, email, username, password);
+        if(firstName && lastName && email && password && username) {
+            console.log('all good')
+        } else {
+            alert('Please fill out all sections')
+        }
     }
     return (
         <Grid
