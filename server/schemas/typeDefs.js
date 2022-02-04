@@ -7,15 +7,15 @@ const typeDefs = gql`
     lastName: String
     email: String
     username: String
-    raffleTickets: Array
-    rafflesWon: Array
+    raffleTickets: [Int]
+    rafflesWon: [Int]
   }
 
   type Raffle {
     name: String
     description: String
     image: String
-    ticketArray: Array
+    ticketArray: [Ticket]
   }
 
   type Ticket {
