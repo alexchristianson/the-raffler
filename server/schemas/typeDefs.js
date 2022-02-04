@@ -29,7 +29,11 @@ const typeDefs = gql`
   }
 
   type Query {
-    user: User
+    me: User
+    users: [User]
+    user(username: String!): User
+    raffleTickets(username: String): [Ticket]
+    raffleTgit aicket(_id: ID!): Ticket
   }
 
 
