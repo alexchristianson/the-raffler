@@ -5,15 +5,13 @@ import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 
 
-function LoginForm () {
+export default function LoginForm () {
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
     const [login, { error }] = useMutation(LOGIN);
     async function handleLogin(e) {
         e.preventDefault();
         if(username && password) {
-            console.log(username, password)
-        } else {
             try{
                 const mutationResponse = await login({
                     variables: { username: username, password: password}
@@ -21,8 +19,10 @@ function LoginForm () {
                 const token = mutationResponse.data.login.token;
                 Auth.login(token);
             } catch (e) {
-                console.log(e);
+                console.log(e, 'you are here');
             }
+        }  else {
+            alert('Please fill in all sections')
         }
     }
     return (
@@ -82,5 +82,3 @@ function LoginForm () {
         </Grid>
     )
 }
-
-export default LoginForm;

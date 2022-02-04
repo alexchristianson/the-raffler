@@ -15,8 +15,6 @@ function SignUpForm () {
     async function handleSignUp(e) {
         e.preventDefault();
         if(firstName && lastName && email && password && username) {
-            console.log('all good')
-        } else {
             const mutationResponse = await addUser({
                 variables:{
                     firstname: firstName,
@@ -28,6 +26,8 @@ function SignUpForm () {
             })
             const toekn = mutationResponse.data.addUser.token;
             Auth.login(toekn);
+        } else {
+            alert('Please fill in all sections!')
         }
     }
     return (
