@@ -19,6 +19,7 @@ const typeDefs = gql`
   }
 
   type Ticket {
+    ticketId: Int
     username: User
   }
 
@@ -33,6 +34,7 @@ const typeDefs = gql`
     users: [User]
     user(username: String!): User
     raffleTickets(username: String): [Ticket]
+    raffleTicket(ticketId: ID!): Ticket
   }
 
 
