@@ -8,9 +8,24 @@ const typeDefs = gql`
     email: String
   }
 
+  type Raffle {
+    name: String
+    description: String
+    image: String
+    ticketArray: Array
+  }
+
+  type Ticket {
+    username: User
+  }
+
 
   type Auth {
     token: ID!
+    user: User
+  }
+
+  type Query {
     user: User
   }
 
