@@ -81,3 +81,13 @@
   }
 }
 /* nav area */
+
+Footer {
+  background-color: rgb(165, 46, 118) ;
+  border-top: 2px rgb(41, 31, 100);
+  text-align: center;
+  position:absolute;
+  left:0;
+  bottom:0;
+  right:0;
+}

@@ -28,10 +28,6 @@
   color: #61dafb;
 }
 
-Footer {
-  background-color: rgb(165, 46, 118) ;
-  border-top: 2px rgb(41, 31, 100);
-}
 
 @keyframes App-logo-spin {
   from {
