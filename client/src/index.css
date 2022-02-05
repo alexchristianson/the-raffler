@@ -11,7 +11,11 @@
 :root {
   --primary-color: #0e2a47;
 }
-
+a:link,
+:visited {
+  text-decoration: none;
+  color: unset;
+}
 body {
   background-image: url(./assets/img/colorful.jpg);
   background-position: center;
@@ -91,14 +95,17 @@ body {
 /* nav area */
 
 Footer {
-  background-color: rgb(165, 46, 118) ;
+  background-color: #176bbf;
   border-top: 2px rgb(41, 31, 100);
+  color: #fff;
   text-align: center;
-  position:absolute;
-  left:0;
-  bottom:0;
-  right:0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
+
+/* Dash Area */
 .dash-container {
   position: relative;
   width: 100%;
@@ -128,3 +135,4 @@ Footer {
   bottom: 10rem;
   left: 17rem;
 }
+/* Dash Area */
