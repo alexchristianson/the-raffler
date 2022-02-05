@@ -1,6 +1,6 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import LOGO from '../../assets/img/raffler-logo.png'
-
 
 
 const Nav = () =>{
@@ -52,11 +52,14 @@ const Nav = () =>{
 
 <ul className='nav-items'>
     <li>
+<Link to="/home">
 <img className='logo-img' src={LOGO} alt='Raffler Text'/>
+</Link>
 </li>
-    <li>
+   <a href='/home'> <li>
         Home
     </li>
+    </a>
     <li>
         [PLACEHOLDER]
     </li>
