@@ -109,7 +109,7 @@ Footer {
 .dash-container {
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 400px;
   background-image: url(./assets/img/tickets2.jpg);
   background-repeat: no-repeat;
   text-align: center;
@@ -124,7 +124,7 @@ Footer {
   position: absolute;
   color: #fff;
   text-shadow: 1px 1px 5px black;
-  top: 10rem;
+  top: 5rem;
   left: 10rem;
 }
 
@@ -132,7 +132,7 @@ Footer {
   position: absolute;
   padding: 10px;
   border: none;
-  bottom: 10rem;
+  bottom: 6rem;
   left: 17rem;
 }
 /* Dash Area */
