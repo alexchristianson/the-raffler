@@ -52,11 +52,11 @@ const Nav = () =>{
 
 <ul className='nav-items'>
     <li>
-<Link to="/home">
+<Link to="/">
 <img className='logo-img' src={LOGO} alt='Raffler Text'/>
 </Link>
 </li>
-   <a href='/home'> <li>
+   <a href='/'> <li>
         Home
     </li>
     </a>
