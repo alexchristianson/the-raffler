@@ -6,8 +6,8 @@ import Auth from '../utils/auth';
 
 
 export default function LoginForm () {
-    const [username, setUsername] = useState();
-    const [password, setPassword] = useState();
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
     const [login, { error }] = useMutation(LOGIN);
     async function handleLogin(e) {
         e.preventDefault();
