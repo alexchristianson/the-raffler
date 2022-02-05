@@ -23,7 +23,6 @@
   },
   "homepage": "https://github.com/alexchristianson/the-raffler#readme",
   "dependencies": {
-    "dotenv": "^16.0.0",
     "concurrently": "^5.1.0"
   }
 }

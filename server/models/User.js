@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
 
@@ -29,12 +28,17 @@ const userSchema = new Schema({
     required: true,
     minlength: 5
   },
-  raffleTickets: {
-    type: Array
-  },
-  rafflesWon: {
-    type: Array
-  }
+  raffleTickets: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Ticket'
+    }
+  ],
+  rafflesWon: [
+    {
+      type: Array
+    }
+  ]
 });
 
 // set up pre-save middleware to create password
