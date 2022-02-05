@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
-
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
-const { Ticket } = require('.');
 
 const userSchema = new Schema({
   firstName: {
