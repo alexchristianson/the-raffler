@@ -6,6 +6,9 @@ export const QUERY_USER = gql`
       _id
       username
       email
+      raffleTickets {
+        ticketId
+      }
     }
   }
 `;
@@ -20,3 +23,4 @@ export const QUERY_ME = gql`
     }
   }
 `;
+

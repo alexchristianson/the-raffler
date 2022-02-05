@@ -7,7 +7,7 @@ const typeDefs = gql`
     lastName: String
     email: String
     username: String
-    raffleTickets: [Int]
+    raffleTickets: [Ticket]
     rafflesWon: [Int]
   }
 
