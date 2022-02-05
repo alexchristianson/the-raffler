@@ -5,11 +5,11 @@ import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 
 function SignUpForm () {
-    const [firstName, setFirstName] = useState();
-    const [lastName, setLastName] = useState();
-    const [email, setEmail ] = useState();
-    const [username, setUsername] = useState();
-    const [password, setPassword] = useState();
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [email, setEmail ] = useState("");
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
     const [addUser] = useMutation(ADD_USER);
 
     async function handleSignUp(e) {
@@ -17,15 +17,15 @@ function SignUpForm () {
         if(firstName && lastName && email && password && username) {
             const mutationResponse = await addUser({
                 variables:{
-                    firstname: firstName,
-                    lastname: lastName,
+                    firstName: firstName,
+                    lastName: lastName,
                     email: email,
                     username: username,
                     password: password
                 }
             })
-            const toekn = mutationResponse.data.addUser.token;
-            Auth.login(toekn);
+            const token = mutationResponse.data.addUser.token;
+            Auth.login(token);
         } else {
             alert('Please fill in all sections!')
         }
