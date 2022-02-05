@@ -7,18 +7,19 @@ const typeDefs = gql`
     lastName: String
     email: String
     username: String
-    raffleTickets: Array
-    rafflesWon: Array
+    raffleTickets: [Int]
+    rafflesWon: [Int]
   }
 
   type Raffle {
     name: String
     description: String
     image: String
-    ticketArray: Array
+    ticketArray: [Ticket]
   }
 
   type Ticket {
+    _id: ID!
     username: User
   }
 
@@ -29,13 +30,20 @@ const typeDefs = gql`
   }
 
   type Query {
-    user: User
+    me: User
+    users: [User]
+    user(username: String!): User
+    raffleTickets(username: String): [Ticket]
+    raffleTicket(ticketId: ID!): Ticket
+    rafflesWon(username: String): [Ticket]
+    raffles(ticketId: ID!): Ticket
   }
 
 
   type Mutation {
     login(username: String!, password: String!): Auth
-    addUser(firstName: String!, lastName: String!,  email: String!, username: String!, password: String!): Auth
+    addUser(firstName: String!, lastName: String!, email: String!, username: String!, password: String!): Auth
+    addTicket: Ticket
     
   }
 `;

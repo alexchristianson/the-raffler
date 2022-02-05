@@ -1,19 +1,33 @@
 import { Button, TextField, Grid } from '@mui/material';
 import { useState } from 'react';
+import Auth from '../utils/auth';
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../utils/mutations';
 
 function SignUpForm () {
-    const [firstName, setFirstName] = useState();
-    const [lastName, setLastName] = useState();
-    const [email, setEmail ] = useState();
-    const [username, setUsername] = useState();
-    const [password, setPassword] = useState();
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [email, setEmail ] = useState("");
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [addUser] = useMutation(ADD_USER);
 
-    function handleSignUp(e) {
+    async function handleSignUp(e) {
         e.preventDefault();
         if(firstName && lastName && email && password && username) {
-            console.log('all good')
+            const mutationResponse = await addUser({
+                variables:{
+                    firstName: firstName,
+                    lastName: lastName,
+                    email: email,
+                    username: username,
+                    password: password
+                }
+            })
+            const token = mutationResponse.data.addUser.token;
+            Auth.login(token);
         } else {
-            alert('Please fill out all sections')
+            alert('Please fill in all sections!')
         }
     }
     return (
