@@ -44,6 +44,7 @@ function App() {
               <Route exact path='/signup' element={<SignUp/>}/>
             </Routes>
             <Raffles />
+            <Footer />
         </div>
     </Router>
     </ApolloProvider>
