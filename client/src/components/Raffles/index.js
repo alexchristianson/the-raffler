@@ -4,6 +4,7 @@ import img2 from '../../assets/img/shrekbeard.jpg';
 import img3 from '../../assets/img/loan.jpg';
 import img4 from '../../assets/img/angrycat.jpg';
 import img5 from '../../assets/img/quarter.jpg';
+import CardStock from '../CardStock';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -11,43 +12,23 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';  
 
-export default function MediaCard() {
-  return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        component="img"
-        height="140"
-        image = "img1"
-        alt=""
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Cucumber
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Sweet Savory Cucumber
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Get a Ticket</Button>
-      </CardActions>
+function CardContainer() {
+    // react makes a call for DATA (from cache, DB)  --> look into HOOKS Apollo HOOK
+    let DATA = [{title: "Cucumber", description: "Sweet Savory Cucumber", image: img1 }, {name: "Shrek Beard", description: "Shrek Beard with matching fedora", image: img2 }, {name: "Payday loan", description: "Payday loan ranging from $5-500", image: img3}, {name: "Angry Cat", description: "Angry fluffy cat", image: img4}, {name: "Quarter", description: "Shiny new quarter", image: img5}]; // --> Think of this as STATE
+    let firstItem = DATA[0];
+    let secondItem = DATA[1];
+    let thirdItem = DATA[2];
+    let fourthItem = DATA[3];
+    let fifthItem = DATA[4];
+    return (
+        // How do we we return multiple cards?  --> think FOR loop
+        <CardStock data={firstItem}/>,
+        <CardStock data={secondItem}/>,
+        <CardStock data={thirdItem}/>,
+        <CardStock data={fourthItem}/>,
+        <CardStock data={fifthItem}/>
 
-      <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        component="img"
-        height="140"
-        image = "img2"
-        alt=""
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Shrek Beard
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Shrek Beard with matching fedora
-        </Typography>
-      </CardContent>
-      </Card>
-    </Card>
-  );
+    )
 }
+
+export default CardContainer;
