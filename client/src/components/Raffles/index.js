@@ -5,6 +5,8 @@ import img3 from '../../assets/img/loan.jpg';
 import img4 from '../../assets/img/angrycat.jpg';
 import img5 from '../../assets/img/quarter.jpg';
 import CardStock from '../CardStock';
+import Grid from '@mui/material/Grid';
+import { ListItem } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -22,11 +24,21 @@ function CardContainer() {
     let fifthItem = DATA[4];
     return (
         // How do we we return multiple cards?  --> think FOR loop
-        <CardStock data={firstItem}/>,
-        <CardStock data={secondItem}/>,
-        <CardStock data={thirdItem}/>,
-        <CardStock data={fourthItem}/>,
-        <CardStock data={fifthItem}/>
+        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+        <Grid item xs={6}>
+        <CardStock data = {firstItem}/>
+        </Grid>
+        <Grid item xs={6}>
+        <CardStock data = {secondItem}/>
+        </Grid>
+        <Grid item xs={6}>
+        <CardStock data = {thirdItem}/>
+        </Grid>
+        <Grid item xs={6}>
+        <CardStock data = {fourthItem}/>
+        </Grid>
+        </Grid>
+
 
     )
 }
