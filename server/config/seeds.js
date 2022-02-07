@@ -89,29 +89,25 @@ db.once('open', async () => {
     await Ticket.deleteMany();
 
     let createdTickets = [];
-    for (let i = 0; i < 10; i += 1) {
-      const ticketId = faker.datatype.number();
+    for (let i = 0; i < 50; i += 1) {
+        const ticketId = faker.datatype.number();
 
-      console.log('user data 2 ' + JSON.stringify(userData[1]));
+        console.log('user data 2 ' + JSON.stringify(userData[1]));
 
-      const randomUserIndex = Math.floor(Math.random() * userData.length);
-      const { username } = userData[randomUserIndex];
+        const randomUserIndex = Math.floor(Math.random() * userData.length);
+        const { username } = userData[randomUserIndex];
 
-        console.log('USERNAME ' + username);
+        const createdTicket = await Ticket.create({ username, ticketId });
 
-      const createdTicket = await Ticket.create({ username, ticketId });
-        console.log(createdTicket);
+        const updatedUser = await User.updateOne(
+            { username: username },
+            { $push: { raffleTickets: createdTicket._id } }
+        );
 
-      const updatedUser = await User.updateOne(
-        { username: username },
-        { $push: { raffleTickets: createdTicket._id } }
-      );
-        console.log('UPDATED USER1', updatedUser);
-      createdTickets.push(createdTicket); 
-      
-        const updatedUser1 = await User.findOne({ username: username });
-        console.log('UPDATED USER2', updatedUser1);
+        createdTickets.push(createdTicket); 
+        
     }
+    
     console.log('Tickets seeded!')
 
     process.exit();

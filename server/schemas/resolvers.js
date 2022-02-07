@@ -35,10 +35,10 @@ const resolvers = {
             return Ticket.findOne({ _id });
         },
         rafflesWon: async (parent, { username }) => {
-            return Ticket.find(username).sort({ createdAt: -1 });
+            return Raffle.find(username).sort({ createdAt: -1 });
         },
         raffles: async (parent, { _id }) => {
-            return Ticket.findOne({ _id });
+            return Raffle.findOne({ _id });
         }
     },
     Mutation: {
