@@ -7,7 +7,6 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
-import Home from "./pages/Home";
 import Nav from "./components/Nav";
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';

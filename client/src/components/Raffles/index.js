@@ -1,4 +1,3 @@
-import React from 'react';
 import img1 from '../../assets/img/cuc.jpg';
 import img2 from '../../assets/img/shrekbeard.jpg';
 import img3 from '../../assets/img/loan.jpg';
@@ -8,7 +7,7 @@ import img6 from '../../assets/img/yatch.jpg';
 import img7 from '../../assets/img/spork.jpg';
 import img8 from '../../assets/img/bullymaguire.jpg';
 import CardStock from '../CardStock';
-import Grid from '@mui/material/Grid';
+import {Grid} from '@mui/material';
 
 function CardContainer() {
     // react makes a call for DATA (from cache, DB)  --> look into HOOKS Apollo HOOK
@@ -20,40 +19,32 @@ function CardContainer() {
     {title: "Swan Yacht", description: "Mega swan yacht", image: img6},
     {title: "Spork", description: "Titanium spork", image: img7},
     {title: "Bully Maguire ornament", description: "Festive Bully Maguire Christmas ornament", image: img8}]; // --> Think of this as STATE
-    let firstItem = DATA[0];
-    let secondItem = DATA[1];
-    let thirdItem = DATA[2];
-    let fourthItem = DATA[3];
-    let fifthItem = DATA[4];
-    let sixthItem = DATA[5];
-    let seventhItem = DATA[6];
-    let eighthItem = DATA[7];
     return (
         // How do we we return multiple cards?  --> think FOR loop
         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         <Grid item xs={3}>
-        <CardStock data = {firstItem}/>
+        <CardStock data = {DATA[0]}/>
         </Grid>
         <Grid item xs={3}>
-        <CardStock data = {secondItem}/>
+        <CardStock data = {DATA[1]}/>
         </Grid>
         <Grid item xs={3}>
-        <CardStock data = {thirdItem}/>
+        <CardStock data = {DATA[2]}/>
         </Grid>
         <Grid item xs={3}>
-        <CardStock data = {fourthItem}/>
+        <CardStock data = {DATA[3]}/>
         </Grid>
         <Grid item xs={3}>
-        <CardStock data = {fifthItem}/>
+        <CardStock data = {DATA[4]}/>
         </Grid>
         <Grid item xs={3}>
-        <CardStock data = {sixthItem}/>
+        <CardStock data = {DATA[5]}/>
         </Grid>
         <Grid item xs={3}>
-        <CardStock data = {seventhItem}/>
+        <CardStock data = {DATA[6]}/>
         </Grid>
         <Grid item xs={3}>
-        <CardStock data = {eighthItem}/>
+        <CardStock data = {DATA[7]}/>
         </Grid>
         </Grid>
 

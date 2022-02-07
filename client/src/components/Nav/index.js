@@ -41,21 +41,15 @@ else{
         
         <ul className='nav-items'>
             <li>
-        <Link to="/">
-        <img className='logo-img' src={LOGO} alt='Raffler Text'/>
-        </Link>
-        </li>
-           <a href='/'> <li>
-                Home
+                <Link to="/">
+                    <img className='logo-img' src={LOGO} alt='Raffler Text'/>
+                </Link>
             </li>
-            </a>
+            <li><a href='/'>Home</a></li>
             <li>
                 [PLACEHOLDER]
             </li>
-            <a href='/login' className='login-btn' style={{textDecoration: 'none'}}>Login</a>
-            {/* <li className='login-btn'>
-                <a href='/login'>Login</a>
-            </li> */}
+            <li><a href='/login'>Login</a></li>
         </ul>
         </nav>
             )
