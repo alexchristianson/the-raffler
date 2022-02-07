@@ -20,6 +20,7 @@ const typeDefs = gql`
 
   type Ticket {
     _id: ID!
+    ticketId: Int
     username: User
   }
 
@@ -34,7 +35,7 @@ const typeDefs = gql`
     users: [User]
     user(username: String!): User
     raffleTickets(username: String): [Ticket]
-    raffleTicket(ticketId: ID!): Ticket
+    raffleTicket(ticketId: Int): Ticket
     rafflesWon(username: String): [Ticket]
     raffles(ticketId: ID!): Ticket
   }
