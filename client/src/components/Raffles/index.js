@@ -1,3 +1,8 @@
+
+import { useQuery } from '@apollo/client';  // We bring in the Hook to request data
+import { QUERY_USER, QUERY_ME } from '../../utils/queries';   // WE bring in the reference for the QUERY to the backend (API)
+
+
 import img1 from '../../assets/img/cuc.jpg';
 import img2 from '../../assets/img/shrekbeard.jpg';
 import img3 from '../../assets/img/loan.jpg';
@@ -19,6 +24,13 @@ function CardContainer() {
     {title: "Swan Yacht", description: "Mega swan yacht", image: img6},
     {title: "Spork", description: "Titanium spork", image: img7},
     {title: "Bully Maguire ornament", description: "Festive Bully Maguire Christmas ornament", image: img8}]; // --> Think of this as STATE
+
+    // This will query the API (backend) Database for Data
+    const { loading, data } = useQuery(QUERY_ME);  // remember this is an async process
+    console.log(data);
+    const raffleData = data?.me || [];
+    console.log(raffleData);
+
     return (
         // How do we we return multiple cards?  --> think FOR loop
         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
