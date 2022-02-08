@@ -170,21 +170,22 @@ Footer {
 
 @media only screen and (max-width: 920px) {
   .dash-container {
-    height: 200px;
+    height: 400px;
   }
   .dash-text {
-    font-size: 20px;
+    font-size: 50px;
   }
   .raffle-img {
-    height: 200px;
+    height: 350px;
+    float: right;
   }
   .tick-btn {
-    padding: 10px;
-    left: 7rem;
-    bottom: 3rem;
+    padding: 15px;
+    left: 13rem;
+    bottom: 8rem;
   }
 }
-@media only screen and (max-width: 520px) {
+@media only screen and (max-width: 580px) {
   .dash-container {
     background-size: cover;
   }
