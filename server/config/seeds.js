@@ -3,6 +3,7 @@ const { faker } = require('@faker-js/faker');
 const { User, Raffle, Ticket } = require('../models');
 const bcrypt = require('bcrypt');
 
+
 db.once('open', async () => {
     await User.deleteMany({});
 
@@ -35,49 +36,49 @@ db.once('open', async () => {
         {
             name: 'Gift Certificate',
             description: '$50 gift certificate to Taco Bell.',
-            image: '',
+            image: "../../client/src/assets/img/taco-bell.png",
             ticketArray: [],
             timer: 15
         },
         {
             name: 'Dodge Caravan',
             description: '2008 Dodge Caravan in fair condition',
-            image: '',
+            image: "../../client/src/assets/img/caravan.jpg",
             ticketArray: [],
             timer: 15
         },
         {
             name: 'Golf Balls',
             description: 'A bucket of 100 golf balls.',
-            image: '',
+            image: "../../client/src/assets/img/balls.jpg",
             ticketArray: [],
             timer: 15
         },
         {
             name: 'Autographed Sword',
             description: 'Katana signed by Randy Jackson',
-            image: '',
+            image: "../../client/src/assets/img/katana.jpg",
             ticketArray: [],
             timer: 15
         },
         {
             name: 'Velvet Painting',
             description: 'A velvet painting of Spock from Star Trek.',
-            image: '',
+            image: "../../client/src/assets/img/spock.jpg",
             ticketArray: [],
             timer: 15
         },
         {
             name: 'Gift Certificate',
             description: '$50 gift certificate to Taco Bell.',
-            image: '',
+            image: "../../client/src/assets/img/taco-bell.png",
             ticketArray: [],
             timer: 15
         },
         {
             name: 'Vacation Getaway',
             description: 'All expense paid trip for 2 to Oshkosh, WI.',
-            image: '',
+            image: "../../client/src/assets/img/oshkosh.jpg",
             ticketArray: [],
             timer: 15
         },
@@ -89,29 +90,25 @@ db.once('open', async () => {
     await Ticket.deleteMany();
 
     let createdTickets = [];
-    for (let i = 0; i < 10; i += 1) {
-      const ticketId = faker.datatype.number();
+    for (let i = 0; i < 50; i += 1) {
+        const ticketId = faker.datatype.number();
 
-      console.log('user data 2 ' + JSON.stringify(userData[1]));
+        console.log('user data 2 ' + JSON.stringify(userData[1]));
 
-      const randomUserIndex = Math.floor(Math.random() * userData.length);
-      const { username } = userData[randomUserIndex];
+        const randomUserIndex = Math.floor(Math.random() * userData.length);
+        const { username } = userData[randomUserIndex];
 
-        console.log('USERNAME ' + username);
+        const createdTicket = await Ticket.create({ username, ticketId });
 
-      const createdTicket = await Ticket.create({ username, ticketId });
-        console.log(createdTicket);
+        const updatedUser = await User.updateOne(
+            { username: username },
+            { $push: { raffleTickets: createdTicket._id } }
+        );
 
-      const updatedUser = await User.updateOne(
-        { username: username },
-        { $push: { raffleTickets: createdTicket._id } }
-      );
-        console.log('UPDATED USER1', updatedUser);
-      createdTickets.push(createdTicket); 
-      
-        const updatedUser1 = await User.findOne({ username: username });
-        console.log('UPDATED USER2', updatedUser1);
+        createdTickets.push(createdTicket); 
+        
     }
+    
     console.log('Tickets seeded!')
 
     process.exit();
