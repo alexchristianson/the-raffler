@@ -28,6 +28,7 @@ body {
   box-shadow: 1px 1px 8px 1px rgb(213, 213, 213);
 }
 .nav-items {
+  font-weight: 600;
   list-style-type: none;
   text-align: center;
   align-items: center;
@@ -36,13 +37,20 @@ body {
 }
 .nav-items li {
   margin-right: 1rem;
+  margin-top: 1.5rem;
 }
-/* .nav-items li:hover {
-  margin-right: 1rem;
-  color: rgb(95, 95, 95);
+.nav-items li:hover {
+  color: rgb(73, 73, 255);
   transition: 0.5s;
-  float: right;
-} */
+}
+.nav-items li:last-child:hover {
+  transition: 0.5s;
+  color: rgb(187, 38, 187);
+}
+.nav-items li:first-child:hover {
+  color: rgb(209, 0, 0);
+  transition: 0.5s;
+}
 
 .login-btn {
   color: #ffffff;
@@ -58,35 +66,45 @@ body {
   background: #176bbf;
 }
 .logo-img {
-  height: 100px;
+  height: 70px;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  float: left;
 }
 
 @media only screen and (max-width: 920px) {
   .nav-container {
-    height: 100px;
+    height: 150px;
     width: 100vw;
     flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
   }
 
   .logo-img {
-    margin-right: 20%;
+    float: none;
+    align-items: center;
+    justify-content: center;
   }
 }
 @media only screen and (max-width: 580px) {
   .nav-container {
-    height: 250px;
+    height: 200px;
     width: 100vw;
     box-shadow: 1px 1px 8px 1px rgb(213, 213, 213);
+    align-items: center;
+    text-align: center;
+    justify-content: center;
   }
   .nav-items {
     display: unset;
+    margin: 0;
   }
   .nav-items li {
-    margin-bottom: 0.5rem;
+    margin: 0;
   }
   .logo-img {
-    width: 50%;
-    float: left;
+    float: none;
     margin: unset;
   }
 }
@@ -97,7 +115,7 @@ Footer {
   border-top: 2px rgb(41, 31, 100);
   color: #fff;
   text-align: center;
-  position: relative;
+  position: absolute;
   left: 0;
   bottom: 0;
   right: 0;
@@ -144,4 +162,31 @@ Footer {
   cursor: pointer;
 }
 
+@media only screen and (max-width: 1444px) {
+  .dash-container {
+    background-size: cover;
+  }
+}
+
+@media only screen and (max-width: 920px) {
+  .dash-container {
+    height: 200px;
+  }
+  .dash-text {
+    font-size: 20px;
+  }
+  .raffle-img {
+    height: 200px;
+  }
+  .tick-btn {
+    padding: 10px;
+    left: 7rem;
+    bottom: 3rem;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .dash-container {
+    background-size: cover;
+  }
+}
 /* Dash Area */
