@@ -40,11 +40,9 @@ else{
         <nav className='nav-container'>
         
         <ul className='nav-items'>
-            <li>
-                <Link to="/">
+        <Link to="/">
                     <img className='logo-img' src={LOGO} alt='Raffler Text'/>
                 </Link>
-            </li>
             <li><a href='/'>Home</a></li>
             <li>
                 [PLACEHOLDER]
