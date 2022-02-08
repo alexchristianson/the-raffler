@@ -1,13 +1,14 @@
 import React from "react";
 import raffleimg from '../assets/img/raffle-pic.png'
 import auth from "../utils/auth";
+import Raffles from '../components/Raffles';
 
 
 const Home = () => {
   if(auth.loggedIn()){
     return(
       <div>
-
+          <Raffles/>
       </div>
     )
   }else{
