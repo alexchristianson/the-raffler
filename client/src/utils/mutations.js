@@ -33,3 +33,15 @@ export const ADD_USER = gql`
         }
     }
 `;
+
+export const ADD_TICKET = gql`
+    mutation addTicket(
+        $ticketId: Int!
+        $username: String!
+    ) {
+        addTicket(
+            ticketId: $ticketId
+            username: $username
+        )
+    }
+`;

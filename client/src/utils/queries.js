@@ -25,3 +25,21 @@ export const QUERY_ME = gql`
     }
   }
 `;
+
+export const QUERY_USERS = gql`
+{
+  users {
+    _id
+    firstName
+    lastName
+    email
+    username
+    raffleTickets {
+      _id
+    }
+    rafflesWon {
+      _id
+    }
+  }
+}
+`;
