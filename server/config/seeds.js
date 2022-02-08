@@ -3,6 +3,7 @@ const { faker } = require('@faker-js/faker');
 const { User, Raffle, Ticket } = require('../models');
 const bcrypt = require('bcrypt');
 
+
 db.once('open', async () => {
     await User.deleteMany({});
 
@@ -35,49 +36,49 @@ db.once('open', async () => {
         {
             name: 'Gift Certificate',
             description: '$50 gift certificate to Taco Bell.',
-            image: '',
+            image: "../../client/src/assets/img/taco-bell.png",
             ticketArray: [],
             timer: 15
         },
         {
             name: 'Dodge Caravan',
             description: '2008 Dodge Caravan in fair condition',
-            image: '',
+            image: "../../client/src/assets/img/caravan.jpg",
             ticketArray: [],
             timer: 15
         },
         {
             name: 'Golf Balls',
             description: 'A bucket of 100 golf balls.',
-            image: '',
+            image: "../../client/src/assets/img/balls.jpg",
             ticketArray: [],
             timer: 15
         },
         {
             name: 'Autographed Sword',
             description: 'Katana signed by Randy Jackson',
-            image: '',
+            image: "../../client/src/assets/img/katana.jpg",
             ticketArray: [],
             timer: 15
         },
         {
             name: 'Velvet Painting',
             description: 'A velvet painting of Spock from Star Trek.',
-            image: '',
+            image: "../../client/src/assets/img/spock.jpg",
             ticketArray: [],
             timer: 15
         },
         {
             name: 'Gift Certificate',
             description: '$50 gift certificate to Taco Bell.',
-            image: '',
+            image: "../../client/src/assets/img/taco-bell.png",
             ticketArray: [],
             timer: 15
         },
         {
             name: 'Vacation Getaway',
             description: 'All expense paid trip for 2 to Oshkosh, WI.',
-            image: '',
+            image: "../../client/src/assets/img/oshkosh.jpg",
             ticketArray: [],
             timer: 15
         },
