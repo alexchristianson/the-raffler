@@ -72,7 +72,7 @@ body {
   float: left;
 }
 
-@media only screen and (max-width: 920px) {
+@media only screen and (max-width: 960px) {
   .nav-container {
     height: 150px;
     width: 100vw;
@@ -168,7 +168,7 @@ Footer {
   }
 }
 
-@media only screen and (max-width: 920px) {
+@media only screen and (max-width: 960px) {
   .dash-container {
     height: 400px;
   }
