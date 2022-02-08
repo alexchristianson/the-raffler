@@ -111,10 +111,13 @@ body {
 /* nav area */
 
 Footer {
+  box-shadow: 1px 1px 8px 1px rgb(213, 213, 213);
+  height: 70px;
   background-color: #176bbf;
   border-top: 2px rgb(41, 31, 100);
   color: #fff;
   text-align: center;
+  justify-content: center;
   position: absolute;
   left: 0;
   bottom: 0;
