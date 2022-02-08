@@ -85,7 +85,8 @@ body {
     margin-bottom: 0.5rem;
   }
   .logo-img {
-    float: none;
+    width: 50%;
+    float: left;
     margin: unset;
   }
 }
@@ -108,7 +109,7 @@ Footer {
   position: relative;
   width: 100%;
   height: 560px;
-  background-image: url(./assets/img/dashback2.svg);
+  background-image: url(./assets/img/dashback3.svg);
   background-repeat: no-repeat;
   background-position: cover;
   background-size: contain;
@@ -118,17 +119,18 @@ Footer {
   background-position: center;
 }
 .dash-text {
-  color: #fff;
-  text-shadow: 2px 3px 6px rgb(39, 39, 39);
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 1px 5px rgb(0, 0, 0);
   font-size: 70px;
   position: absolute;
   left: 5rem;
-  top: 8rem;
+  top: 4rem;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .raffle-img {
-  float: right;
   height: 600px;
+  min-height: 300px;
 }
 .tick-btn {
   font-family: Arial, Helvetica, sans-serif;
@@ -138,9 +140,9 @@ Footer {
   padding: 15px;
   position: absolute;
   left: 17rem;
-  bottom: 11rem;
+  bottom: 15rem;
   background-color: #bbefff;
-  box-shadow: 1px 1px 5px rgb(35, 35, 35);
+  box-shadow: 1px 1px 10px rgb(35, 35, 35);
   cursor: pointer;
 }
 
