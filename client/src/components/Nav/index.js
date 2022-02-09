@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import LOGO from '../../assets/img/raffler-logo.png'
+import LOGO from '../../assets/logos/raffler-logo.png'
 import auth from '../../utils/auth'
 
 const Nav = () =>{
@@ -13,13 +13,10 @@ const Nav = () =>{
    
     return(
 <nav className='nav-container'>
-
-<ul className='nav-items'>
-    <li>
 <Link to="/">
 <img className='logo-img' src={LOGO} alt='Raffler Text'/>
 </Link>
-</li>
+<ul className='nav-items'>
    <a href='/'> <li>
         Home
     </li>
@@ -27,7 +24,7 @@ const Nav = () =>{
     <li>
         [PLACEHOLDER]
     </li>
-    <a href='/' className='login-btn' style={{textDecoration: 'none'}}  onClick={logout}>Logout</a>
+    <li><a href='/' onClick={logout}>Logout</a></li> 
     {/* <li className='login-btn'>
         <a href='/login'>Login</a>
     </li> */}
