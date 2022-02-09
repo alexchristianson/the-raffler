@@ -5,6 +5,10 @@ function CardStock(props) {
     // console.log(props.data);
     let objectData = props.data;
     let { name, description, image } = objectData;
+    const findWinner = () => {
+        return objectData.ticketArray[Math.floor(Math.random()*objectData.ticketArray.length)].username
+    }
+
     return (
         <Card sx={{ maxWidth: 345 }}>
         <CardMedia
