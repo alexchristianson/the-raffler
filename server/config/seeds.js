@@ -34,6 +34,41 @@ db.once('open', async () => {
 
     const raffles = await Raffle.insertMany([
         {
+            name: 'Cat',
+            description: 'A 3-year old cat with a bit of a temper.',
+            image: "/assets/images/angrycat.jpg",
+            ticketArray: [],
+            timer: 350000
+        },
+        {
+            name: 'Spork',
+            description: 'A single spork, perfect for eating any meal.',
+            image: "/assets/images/spork.jpg",
+            ticketArray: [],
+            timer: 340000
+        },
+        {
+            name: 'Autographed Sword',
+            description: "A katana signed by American Idol's Randy Jackson.",
+            image: "/assets/images/katana.jpg",
+            ticketArray: [],
+            timer: 330000
+        },
+        {
+            name: 'Bully Maguire Ornament',
+            description: 'A Bully Maguire Christmas ornament.',
+            image: "/assets/images/bullymaguire.jpg",
+            ticketArray: [],
+            timer: 320000
+        },
+        {
+            name: 'Swan Yacht',
+            description: 'A yacht that looks like a swan.',
+            image: "/assets/images/yacht.jpg",
+            ticketArray: [],
+            timer: 310000
+        },
+        {
             name: 'Gift Certificate',
             description: '$50 gift certificate to Taco Bell.',
             image: "/assets/images/taco-bell.png",
