@@ -37,4 +37,4 @@ N/A
 Please feel free to reach out through GitHub with any questions or concerns.
 
 
-![screenshot](./client/src/assets/img/raffler.png)
+![screenshot](./client/public/assets/img/raffler.png)
