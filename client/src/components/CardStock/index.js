@@ -1,8 +1,7 @@
 import {Card, CardActions, CardContent, CardMedia, Button, Typography} from '@mui/material';
 
 function CardStock(props) {
-    // console.log(props);
-    // console.log(props.data);
+ 
     let objectData = props.data;
     let { name, description, image } = objectData;
     const findWinner = () => {
