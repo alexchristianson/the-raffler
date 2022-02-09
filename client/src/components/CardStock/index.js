@@ -8,7 +8,7 @@ function CardStock(props) {
     const findWinner = () => {
         return objectData.ticketArray[Math.floor(Math.random()*objectData.ticketArray.length)].username
     }
-
+    let ticketNumber = objectData.ticketArray.length;
     return (
         <Card sx={{ maxWidth: 345 }}>
         <CardMedia
@@ -24,6 +24,7 @@ function CardStock(props) {
             <Typography variant="body2" color="text.secondary">
             {description}
             </Typography>
+            {ticketNumber <= 2 ? <Typography variant='body2'>{ticketNumber}</Typography> : <Typography variant='body2'>{findWinner()}</Typography>}
         </CardContent>
         <CardActions>
             <Button size="small">Get a Ticket</Button>
