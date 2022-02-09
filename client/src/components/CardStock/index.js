@@ -24,7 +24,7 @@ function CardStock(props) {
             <Typography variant="body2" color="text.secondary">
             {description}
             </Typography>
-            {ticketNumber <= 2 ? <Typography variant='body2'>{ticketNumber}</Typography> : <Typography variant='body2'>{findWinner()}</Typography>}
+            {ticketNumber <= 2 ? <Typography variant='body2'>Number of Tickets Bought: {ticketNumber}</Typography> : <Typography variant='body2'>{findWinner()}</Typography>}
         </CardContent>
         <CardActions>
             <Button size="small">Get a Ticket</Button>
