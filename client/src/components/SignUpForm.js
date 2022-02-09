@@ -6,11 +6,11 @@ import { ADD_USER } from '../utils/mutations';
 import { Link } from 'react-router-dom';
 
 function SignUpForm () {
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [email, setEmail ] = useState("");
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+    const [firstName, setFirstName] = useState();
+    const [lastName, setLastName] = useState();
+    const [email, setEmail ] = useState();
+    const [username, setUsername] = useState();
+    const [password, setPassword] = useState();
     const [addUser] = useMutation(ADD_USER);
 
     async function handleSignUp(e) {
@@ -27,6 +27,7 @@ function SignUpForm () {
             })
             const token = mutationResponse.data.addUser.token;
             Auth.login(token);
+
         } else {
             alert('Please fill in all sections!')
         }
