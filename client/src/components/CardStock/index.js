@@ -4,18 +4,18 @@ function CardStock(props) {
     console.log(props);
     console.log(props.data);
     let objectData = props.data;
-    let { title, description, image } = objectData;
+    let { name, description, image } = objectData;
     return (
         <Card sx={{ maxWidth: 345 }}>
         <CardMedia
             component="img"
             height="140"
             image = {image}
-            alt=""
+            alt="raffle item"
         />
         <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-            {title}
+            {name}
             </Typography>
             <Typography variant="body2" color="text.secondary">
             {description}
