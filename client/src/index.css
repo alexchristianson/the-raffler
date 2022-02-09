@@ -17,7 +17,7 @@ a:link,
   color: unset;
 }
 body {
-  background-image: url(./assets/img/colorful.jpg);
+  background-image: url(./assets/logos/colorful.jpg);
   background-position: center;
   background-size: 1000px;
 }
@@ -50,6 +50,9 @@ body {
 .nav-items li:first-child:hover {
   color: rgb(209, 0, 0);
   transition: 0.5s;
+}
+.nav-items li:last-child {
+  float: right;
 }
 
 .login-btn {
@@ -89,8 +92,6 @@ body {
 }
 @media only screen and (max-width: 580px) {
   .nav-container {
-    height: 150px;
-    width: 100vw;
     box-shadow: 1px 1px 8px 1px rgb(213, 213, 213);
     align-items: center;
     text-align: center;
@@ -112,10 +113,12 @@ body {
 
 Footer {
   box-shadow: 1px 1px 8px 1px rgb(213, 213, 213);
+  height: 70px;
   background-color: #176bbf;
   border-top: 2px rgb(41, 31, 100);
   color: #fff;
   text-align: center;
+  justify-content: center;
   position: absolute;
   left: 0;
   bottom: 0;
@@ -127,7 +130,7 @@ Footer {
   background-color: rgb(68, 192, 196);
   position: relative;
   height: 560px;
-  background-image: url(./assets/img/dashback3.svg);
+  background-image: url(./assets/logos/dashback3.svg);
   background-repeat: no-repeat;
   background-position: cover;
   background-size: contain;

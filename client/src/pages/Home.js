@@ -1,5 +1,5 @@
 import React from "react";
-import raffleimg from '../assets/img/raffle-pic.png'
+import raffleimg from '../assets/logos/raffle-pic.png'
 import auth from "../utils/auth";
 import Raffles from '../components/Raffles';
 import CountDownTimer from "../components/CountDownTimer";
