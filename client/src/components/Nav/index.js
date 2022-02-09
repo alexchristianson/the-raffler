@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import LOGO from '../../assets/img/raffler-logo.png'
+import LOGO from '../../assets/logos/raffler-logo.png'
 import auth from '../../utils/auth'
 
 const Nav = () =>{
@@ -24,7 +24,7 @@ const Nav = () =>{
     <li>
         [PLACEHOLDER]
     </li>
-    <a href='/' className='login-btn' style={{textDecoration: 'none'}}  onClick={logout}>Logout</a>
+    <li><a href='/' onClick={logout}>Logout</a></li> 
     {/* <li className='login-btn'>
         <a href='/login'>Login</a>
     </li> */}
