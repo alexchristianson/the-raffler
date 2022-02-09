@@ -12,6 +12,7 @@ const typeDefs = gql`
   }
 
   type Raffle {
+    _id: ID!
     name: String
     description: String
     image: String
