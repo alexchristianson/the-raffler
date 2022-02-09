@@ -44,3 +44,22 @@ export const QUERY_USERS = gql`
 }
 `;
 
+<<<<<<< HEAD
+=======
+
+export const QUERY_ALL_RAFFLES = gql`
+  {
+    raffles {
+      _id
+      name
+      description
+      image
+      ticketArray {
+        _id
+        username
+      }
+      timer
+    }
+  }
+`;
+>>>>>>> 3dc6ee38909ce2d475e9a09eec47c8da39b71fee
