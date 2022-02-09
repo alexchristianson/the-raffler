@@ -4,13 +4,12 @@ import CardStock from '../CardStock';
 import {Grid} from '@mui/material';
 
 function CardContainer() {
-    console.log(useQuery, QUERY_ALL_RAFFLES);
+    //console.log(useQuery(QUERY_ALL_RAFFLES)); 
     const { loading, data } = useQuery(QUERY_ALL_RAFFLES);  // remember this is an async process
     console.log(data);  // this will be 'undefined' UNTIL loading completes and puts the info into 'data'
     const raffleData = data?.me || [];  // Until we get data loaded into 'raffleData' we initialize an empty array []
     console.log(raffleData);
     
-
     return (
         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
             { data && data.map( (item) => (
