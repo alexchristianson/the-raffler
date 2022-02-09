@@ -36,49 +36,49 @@ db.once('open', async () => {
         {
             name: 'Gift Certificate',
             description: '$50 gift certificate to Taco Bell.',
-            image: "taco-bell.png",
+            image: "/assets/images/taco-bell.png",
             ticketArray: [],
             timer: 300000
         },
         {
             name: 'Dodge Caravan',
             description: '2008 Dodge Caravan in fair condition',
-            image: "caravan.jpg",
+            image: "/assets/images/caravan.jpg",
             ticketArray: [],
             timer: 400000
         },
         {
             name: 'Golf Balls',
             description: 'A bucket of 100 golf balls.',
-            image: "balls.jpg",
+            image: "/assets/images/balls.jpg",
             ticketArray: [],
             timer: 500000
         },
         {
             name: 'Autographed Sword',
             description: 'Katana signed by Randy Jackson',
-            image: "katana.jpg",
+            image: "/assets/images/katana.jpg",
             ticketArray: [],
             timer: 600000
         },
         {
             name: 'Velvet Painting',
             description: 'A velvet painting of Spock from Star Trek.',
-            image: "spock.jpg",
+            image: "/assets/images/spock.jpg",
             ticketArray: [],
             timer: 700000
         },
         {
             name: 'Gift Certificate',
             description: '$50 gift certificate to Taco Bell.',
-            image: "taco-bell.png",
+            image: "/assets/images/taco-bell.png",
             ticketArray: [],
             timer: 800000
         },
         {
             name: 'Vacation Getaway',
             description: 'All expense paid trip for 2 to Oshkosh, WI.',
-            image: "oshkosh.jpg",
+            image: "/assets/images/oshkosh.jpg",
             ticketArray: [],
             timer: 900000
         },
