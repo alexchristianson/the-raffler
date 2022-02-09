@@ -16,6 +16,7 @@ const typeDefs = gql`
     description: String
     image: String
     ticketArray: [Ticket]
+    timer: Int
   }
 
   type Ticket {

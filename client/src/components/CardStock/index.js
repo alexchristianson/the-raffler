@@ -11,7 +11,7 @@ function CardStock(props) {
             component="img"
             height="140"
             image = {image}
-            alt=""
+            alt="raffle item"
         />
         <CardContent>
             <Typography gutterBottom variant="h5" component="div">
