@@ -29,7 +29,6 @@ function CardContainer() {
     console.log(raffleData);
 
     return (
-
         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
             { DATA && DATA.map( (item) => (
                 <Grid item xs={3}>
