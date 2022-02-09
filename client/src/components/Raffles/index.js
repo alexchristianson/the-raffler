@@ -34,6 +34,10 @@ function CardContainer() {
     //const userData = data?.me || []; Unitl we get data loaded into 'data' we initialize an empty array []
     // console.log(userData);
 
+    const findWinner = () => {
+        return data.raffle.ticketArray[Math.floor(Math.random()*data.raffle.ticketArray.length)].username
+    }
+
     return (
         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
             { data && data.raffles && data.raffles.map( (item) => (
