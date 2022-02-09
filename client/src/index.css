@@ -1,13 +1,197 @@
-body {
+* {
+  padding: 0;
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --primary-color: #0e2a47;
 }
+a:link,
+:visited {
+  text-decoration: none;
+  color: unset;
+}
+body {
+  background-image: url(./assets/logos/colorful.jpg);
+  background-position: center;
+  background-size: 1000px;
+}
+/* nav area */
+.nav-container {
+  background-color: rgba(255, 255, 255, 0.1);
+  height: 80px;
+  box-shadow: 1px 1px 8px 1px rgb(213, 213, 213);
+}
+.nav-items {
+  font-weight: 600;
+  list-style-type: none;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.nav-items li {
+  margin-right: 1rem;
+  margin-top: 1.5rem;
+}
+.nav-items li:hover {
+  color: rgb(73, 73, 255);
+  transition: 0.5s;
+}
+.nav-items li:last-child:hover {
+  transition: 0.5s;
+  color: rgb(187, 38, 187);
+}
+.nav-items li:first-child:hover {
+  color: rgb(209, 0, 0);
+  transition: 0.5s;
+}
+.nav-items li:last-child {
+  float: right;
+}
+
+.login-btn {
+  color: #ffffff;
+  padding: 0.7em 1.7em;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: #1976d2;
+  transition: all 0.3s;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+  margin: 1rem;
+}
+.login-btn:hover {
+  background: #176bbf;
+}
+.logo-img {
+  height: 70px;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  float: left;
+}
+
+@media only screen and (max-width: 960px) {
+  .nav-container {
+    height: 150px;
+    width: 100vw;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo-img {
+    float: none;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .nav-container {
+    box-shadow: 1px 1px 8px 1px rgb(213, 213, 213);
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+  .nav-items {
+    display: unset;
+    margin: 0;
+  }
+  .nav-items li {
+    margin: 0;
+  }
+  .logo-img {
+    float: none;
+    margin: unset;
+  }
+}
+/* nav area */
+
+Footer {
+  box-shadow: 1px 1px 8px 1px rgb(213, 213, 213);
+  height: 70px;
+  background-color: #176bbf;
+  border-top: 2px rgb(41, 31, 100);
+  color: #fff;
+  text-align: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* Dash Area */
+.dash-container {
+  background-color: rgb(68, 192, 196);
+  position: relative;
+  height: 560px;
+  background-image: url(./assets/logos/dashback3.svg);
+  background-repeat: no-repeat;
+  background-position: cover;
+  background-size: contain;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+}
+.dash-text {
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 1px 5px rgb(0, 0, 0);
+  font-size: 70px;
+  position: absolute;
+  left: 5rem;
+  top: 4rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.raffle-img {
+  height: 600px;
+}
+.tick-btn {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  border: none;
+  font-weight: 600;
+  padding: 15px;
+  position: absolute;
+  left: 17rem;
+  bottom: 15rem;
+  background-color: #bbefff;
+  box-shadow: 1px 1px 10px rgb(35, 35, 35);
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1444px) {
+  .dash-container {
+    background-size: cover;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .dash-container {
+    height: 400px;
+  }
+  .dash-text {
+    font-size: 50px;
+  }
+  .raffle-img {
+    height: 350px;
+    float: right;
+  }
+  .tick-btn {
+    padding: 15px;
+    left: 13rem;
+    bottom: 8rem;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .dash-container {
+    background-size: cover;
+  }
+}
+/* Dash Area */
