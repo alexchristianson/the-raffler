@@ -37,8 +37,8 @@ const resolvers = {
         rafflesWon: async (parent, { username }) => {
             return Raffle.find(username).sort({ createdAt: -1 });
         },
-        raffles: async (parent, { _id }) => {
-            return Raffle.findOne({ _id });
+        raffles: async (parent, args) => {
+            return Raffle.find();
         }
     },
     Mutation: {
