@@ -23,7 +23,7 @@ db.once('open', async () => {
         const saltRounds = 10;
         hashedPassword = await bcrypt.hash(password, saltRounds);
 
-        userData.push({ firstName, lastName, username, email, hashedPassword, raffleTickets, rafflesWon });
+        userData.push({ firstName, lastName, username, email, password: hashedPassword, raffleTickets, rafflesWon });
     }
    
     const createdUser = await User.collection.insertMany(userData);
