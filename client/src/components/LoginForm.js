@@ -9,6 +9,7 @@ export default function LoginForm () {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [login] = useMutation(LOGIN);
+
     async function handleLogin(e) {
         e.preventDefault();
         if(username && password) {
@@ -25,6 +26,7 @@ export default function LoginForm () {
             alert('Please fill in all sections')
         }
     }
+    
     return (
         <Grid
             container
