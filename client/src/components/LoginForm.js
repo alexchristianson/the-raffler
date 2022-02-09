@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { LOGIN } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default function LoginForm () {
     const [username, setUsername] = useState("");
