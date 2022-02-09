@@ -13,13 +13,10 @@ const Nav = () =>{
    
     return(
 <nav className='nav-container'>
-
-<ul className='nav-items'>
-    <li>
 <Link to="/">
 <img className='logo-img' src={LOGO} alt='Raffler Text'/>
 </Link>
-</li>
+<ul className='nav-items'>
    <a href='/'> <li>
         Home
     </li>

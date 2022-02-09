@@ -89,7 +89,7 @@ body {
 }
 @media only screen and (max-width: 580px) {
   .nav-container {
-    height: 200px;
+    height: 150px;
     width: 100vw;
     box-shadow: 1px 1px 8px 1px rgb(213, 213, 213);
     align-items: center;
