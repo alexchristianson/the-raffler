@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client';  // We bring in the Hook to request data
-import { QUERY_USER, QUERY_ME, QUERY_ALL_RAFFLES } from '../../utils/queries';   // WE bring in the reference for the QUERY to the backend (API)
+import {  QUERY_ALL_RAFFLES } from '../../utils/queries';   // WE bring in the reference for the QUERY to the backend (API)
 import img1 from '../../assets/img/cuc.jpg';
 import img2 from '../../assets/img/shrekbeard.jpg';
 import img3 from '../../assets/img/loan.jpg';
@@ -13,10 +13,10 @@ import {Grid} from '@mui/material';
 
 function CardContainer() {
     // react makes a call for DATA (from cache, DB)  --> look into HOOKS Apollo HOOK
-    const { raffleData } = useQuery(QUERY_ALL_RAFFLES);
+    const { loading, data } = useQuery(QUERY_ALL_RAFFLES);
     
-    console.log(raffleData);
-    let DATA = raffleData
+    console.log(data);
+    let DATA = data
     // [{title: "Cucumber", description: "Sweet Savory Cucumber", image: img1 }, 
     // {title: "Shrek Beard", description: "Shrek Beard portrait with matching fedora", image: img2 }, 
     // {title: "Payday loan", description: "Payday loan ranging from $5-500", image: img3}, 
@@ -29,9 +29,9 @@ function CardContainer() {
     
 
     // This will query the API (backend) Database for Data
-    const { loading, data } = useQuery(QUERY_ME);  // remember this is an async process
+    // remember this is an async process
     // console.log(data);  // this will be 'undefined' UNTIL loading completes and puts the info into 'data'
-    const userData = data?.me || [];  // Unitl we get data loaded into 'raffleData' we initialize an empty array []
+    //const userData = data?.me || []; Unitl we get data loaded into 'data' we initialize an empty array []
     // console.log(userData);
 
     return (
