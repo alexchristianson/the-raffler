@@ -1,34 +1,34 @@
 const db = require('./connection');
-const { faker } = require('@faker-js/faker');
+// const { faker } = require('@faker-js/faker');
 const { User, Raffle, Ticket } = require('../models');
 const bcrypt = require('bcrypt');
 
 
 db.once('open', async () => {
-    await User.deleteMany({});
+    // await User.deleteMany({});
 
-    // create user data
-    const userData = [];
+    // // create user data
+    // const userData = [];
   
   
-    for (let i = 0; i < 10; i += 1) {
-        const firstName = faker.name.firstName();
-        const lastName = faker.name.lastName();
-        const username = faker.internet.userName();
-        const email = faker.internet.email();
-        const password = 'password123';
-        const raffleTickets = [];
-        const rafflesWon = [];
+    // for (let i = 0; i < 10; i += 1) {
+    //     const firstName = faker.name.firstName();
+    //     const lastName = faker.name.lastName();
+    //     const username = faker.internet.userName();
+    //     const email = faker.internet.email();
+    //     const password = 'password123';
+    //     const raffleTickets = [];
+    //     const rafflesWon = [];
         
-        const saltRounds = 10;
-        hashedPassword = await bcrypt.hash(password, saltRounds);
+    //     const saltRounds = 10;
+    //     hashedPassword = await bcrypt.hash(password, saltRounds);
 
-        userData.push({ firstName, lastName, username, email, password: hashedPassword, raffleTickets, rafflesWon });
-    }
+    //     userData.push({ firstName, lastName, username, email, password: hashedPassword, raffleTickets, rafflesWon });
+    // }
    
-    const createdUser = await User.collection.insertMany(userData);
+    // const createdUser = await User.collection.insertMany(userData);
 
-    console.log('Users seeded!')
+    // console.log('Users seeded!')
 
     await Raffle.deleteMany();
 
@@ -122,29 +122,29 @@ db.once('open', async () => {
 
     console.log('Raffle items seeded!')
 
-    await Ticket.deleteMany();
+    // await Ticket.deleteMany();
 
-    let createdTickets = [];
-    for (let i = 0; i < 50; i += 1) {
-        const ticketId = faker.datatype.number();
+    // let createdTickets = [];
+    // for (let i = 0; i < 50; i += 1) {
+    //     const ticketId = faker.datatype.number();
 
-        console.log('user data 2 ' + JSON.stringify(userData[1]));
+    //     console.log('user data 2 ' + JSON.stringify(userData[1]));
 
-        const randomUserIndex = Math.floor(Math.random() * userData.length);
-        const { username } = userData[randomUserIndex];
+    //     const randomUserIndex = Math.floor(Math.random() * userData.length);
+    //     const { username } = userData[randomUserIndex];
 
-        const createdTicket = await Ticket.create({ username, ticketId });
+    //     const createdTicket = await Ticket.create({ username, ticketId });
 
-        const updatedUser = await User.updateOne(
-            { username: username },
-            { $push: { raffleTickets: createdTicket._id } }
-        );
+    //     const updatedUser = await User.updateOne(
+    //         { username: username },
+    //         { $push: { raffleTickets: createdTicket._id } }
+    //     );
 
-        createdTickets.push(createdTicket); 
+    //     createdTickets.push(createdTicket); 
         
-    }
+    // }
     
-    console.log('Tickets seeded!')
+    // console.log('Tickets seeded!')
 
     process.exit();
 });
