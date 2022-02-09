@@ -5,7 +5,6 @@ const { Schema } = mongoose;
 const ticketSchema = new Schema({
   ticketId: {
     type: Number,
-    // required: true
   },
   username: {
     type: String,

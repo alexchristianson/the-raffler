@@ -19,13 +19,7 @@ const Nav = () =>{
                 <Link to='/'> 
                     <li>Home</li>
                 </Link>
-                <li>
-                    [PLACEHOLDER]
-                </li>
-                <li><a href='/' onClick={logout}>Logout</a></li> 
-                {/* <li className='login-btn'>
-                    <a href='/login'>Login</a>
-                </li> */}
+                <li><Link to='/' onClick={logout}>Logout</Link></li> 
             </ul>
         </nav>
     )
@@ -38,9 +32,6 @@ const Nav = () =>{
                 </Link>
                 <ul className='nav-items'>
                     <li><Link to='/'>Home</Link></li>
-                    <li>
-                        [PLACEHOLDER]
-                    </li>
                     <li><Link to='/login'>Login</Link></li>
                 </ul>
             </nav>
