@@ -54,7 +54,12 @@ export const QUERY_ALL_RAFFLES = gql`
       image
       ticketArray {
         _id
-        username
+        ticketId
+        username {
+          _id
+          email
+          username
+        }
       }
       timer
     }
