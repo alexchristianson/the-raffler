@@ -1,13 +1,6 @@
 import { useQuery } from '@apollo/client';  // We bring in the Hook to request data
 import {  QUERY_ALL_RAFFLES } from '../../utils/queries';   // WE bring in the reference for the QUERY to the backend (API)
-import img1 from '../../assets/img/cuc.jpg';
-import img2 from '../../assets/img/shrekbeard.jpg';
-import img3 from '../../assets/img/loan.jpg';
-import img4 from '../../assets/img/angrycat.jpg';
-import img5 from '../../assets/img/quarter.jpg';
-import img6 from '../../assets/img/yatch.jpg';
-import img7 from '../../assets/img/spork.jpg';
-import img8 from '../../assets/img/bullymaguire.jpg';
+
 import CardStock from '../CardStock';
 import {Grid} from '@mui/material';
 
