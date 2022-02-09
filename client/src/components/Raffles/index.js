@@ -1,5 +1,4 @@
 import { useQuery } from '@apollo/client';  // We bring in the Hook to request data
-<<<<<<< HEAD
 import { QUERY_USER, QUERY_ME, QUERY_ALL_RAFFLES } from '../../utils/queries';   // WE bring in the reference for the QUERY to the backend (API)
 import img1 from '../../assets/img/cuc.jpg';
 import img2 from '../../assets/img/shrekbeard.jpg';
@@ -9,14 +8,10 @@ import img5 from '../../assets/img/quarter.jpg';
 import img6 from '../../assets/img/yatch.jpg';
 import img7 from '../../assets/img/spork.jpg';
 import img8 from '../../assets/img/bullymaguire.jpg';
-=======
-import { QUERY_ALL_RAFFLES} from '../../utils/queries';   // WE bring in the reference for the QUERY to the backend (API)
->>>>>>> 8e6e00c96a4e84337b89cb50851274ae51128ec7
 import CardStock from '../CardStock';
 import {Grid} from '@mui/material';
 
 function CardContainer() {
-<<<<<<< HEAD
     // react makes a call for DATA (from cache, DB)  --> look into HOOKS Apollo HOOK
     const { raffleData } = useQuery(QUERY_ALL_RAFFLES);
     
@@ -38,14 +33,6 @@ function CardContainer() {
     // console.log(data);  // this will be 'undefined' UNTIL loading completes and puts the info into 'data'
     const userData = data?.me || [];  // Unitl we get data loaded into 'raffleData' we initialize an empty array []
     // console.log(userData);
-=======
-    console.log(useQuery, QUERY_ALL_RAFFLES);
-    const { loading, data } = useQuery(QUERY_ALL_RAFFLES);  // remember this is an async process
-    console.log(data);  // this will be 'undefined' UNTIL loading completes and puts the info into 'data'
-    const raffleData = data?.me || [];  // Until we get data loaded into 'raffleData' we initialize an empty array []
-    console.log(raffleData);
-    
->>>>>>> 8e6e00c96a4e84337b89cb50851274ae51128ec7
 
     return (
         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
