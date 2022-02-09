@@ -15,8 +15,8 @@ function CardContainer() {
     // react makes a call for DATA (from cache, DB)  --> look into HOOKS Apollo HOOK
     const { loading, data } = useQuery(QUERY_ALL_RAFFLES);
     
-    console.log(data);
-    let DATA = data
+    //console.log(data);
+    //let raffles = data.raffles;
     // [{title: "Cucumber", description: "Sweet Savory Cucumber", image: img1 }, 
     // {title: "Shrek Beard", description: "Shrek Beard portrait with matching fedora", image: img2 }, 
     // {title: "Payday loan", description: "Payday loan ranging from $5-500", image: img3}, 
@@ -36,7 +36,7 @@ function CardContainer() {
 
     return (
         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-            { data && data.map( (item) => (
+            { data && data.raffles && data.raffles.map( (item) => (
                 <Grid item xs={3}>
                     <CardStock data = {item}/>
                 </Grid>
