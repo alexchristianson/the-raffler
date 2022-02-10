@@ -27,7 +27,7 @@ function CardStock(props) {
    try{
      const ticketClick = await addTicket({
       variables:{
-          raffleId: event.target.dataset.raffleid
+          raffleId: event.target.dataset.raffleid,
       }
   }) 
 

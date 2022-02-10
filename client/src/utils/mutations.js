@@ -42,6 +42,7 @@ export const ADD_TICKET = gql`
       _id
       username {
         _id
+        username
       }
     }
   }
