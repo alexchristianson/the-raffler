@@ -2,11 +2,9 @@ import React from "react";
 import raffleimg from '../assets/logos/raffle-pic.png'
 import auth from "../utils/auth";
 import Raffles from '../components/Raffles';
-import CountDownTimer from "../components/CountDownTimer";
 import {Link} from 'react-router-dom';
 
 const Home = () => {
-  const hoursMinSecs = {hours:1, minutes: 20, seconds: 40}
   if(auth.loggedIn()){
     return(
       <div>
@@ -25,7 +23,6 @@ const Home = () => {
         <img  className="raffle-img"src={raffleimg} alt="Raffle Machine"/>
         <div>   
       </div>
-    <CountDownTimer hoursMinSecs={hoursMinSecs}/>
     </div>
     );
   }
