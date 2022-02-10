@@ -83,7 +83,9 @@ const resolvers = {
           { $push: { ticketArray: ticket._id } },
           { new: true }
         );
+  
         return ticket;
+        console.log(ticket._id);
       }
 
       throw new AuthenticationError("You need to be logged in!");

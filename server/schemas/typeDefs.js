@@ -21,7 +21,7 @@ const typeDefs = gql`
 
   type Ticket {
     _id: ID!
-    username: User
+    username: String
   }
 
 

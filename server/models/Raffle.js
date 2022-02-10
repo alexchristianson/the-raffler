@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 
-
 const { Schema } = mongoose;
 
 const raffleSchema = new Schema({
@@ -18,8 +17,7 @@ const raffleSchema = new Schema({
   },
   ticketArray: [
     {
-      type: Schema.Types.ObjectId,
-      ref: "Ticket",
+      type: String
     },
   ],
 });

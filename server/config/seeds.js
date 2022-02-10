@@ -120,7 +120,6 @@ db.once("open", async () => {
 
   let createdTickets = [];
   for (let i = 0; i < 50; i += 1) {
-    console.log("user data 2 " + JSON.stringify(userData[1]));
 
     const randomUserIndex = Math.floor(Math.random() * userData.length);
     const { username } = userData[randomUserIndex];
