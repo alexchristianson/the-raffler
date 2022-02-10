@@ -44,7 +44,7 @@ function CardStock(props) {
   }
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{maxWidth:'80%', margin: 'auto'}}>
       <CardMedia component="img" height="140" image={image} alt="raffle item" />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
