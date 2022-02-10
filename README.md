@@ -1,6 +1,6 @@
 # The Raffler 
 
-[The Raffler](https://the-raffler.herokuapp.com/)
+[The Raffler](https://guarded-brushlands-70829.herokuapp.com/)
 
 ## Application Description
 The Raffler! \
