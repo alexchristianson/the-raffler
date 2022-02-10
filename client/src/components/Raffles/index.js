@@ -17,7 +17,7 @@ function CardContainer() {
     return (
         <Grid container direction='row' justifyContent='space-evenly'>
             { data && data.raffles && data.raffles.map( (item) => (
-                <Grid  item xs={12}  sm={3} sx={{my: '2vh'}}>
+                <Grid  item xs={12}  sm={4} md={3} sx={{my: '2vh'}}>
                     <CardStock data = {item}/>
                 </Grid>
             ))}
