@@ -15,9 +15,9 @@ function CardContainer() {
     // console.log(userData);
 
     return (
-        <Grid container direction='column' rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+        <Grid container direction='row' justifyContent='space-evenly'>
             { data && data.raffles && data.raffles.map( (item) => (
-                <Grid item xs={3}>
+                <Grid  item xs={12}  sm={3} sx={{my: '2vh'}}>
                     <CardStock data = {item}/>
                 </Grid>
             ))}
