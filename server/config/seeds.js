@@ -48,13 +48,6 @@ db.once('open', async () => {
             timer: 340000
         },
         {
-            name: 'Autographed Sword',
-            description: "A katana signed by American Idol's Randy Jackson.",
-            image: "/assets/images/katana.jpg",
-            ticketArray: [],
-            timer: 330000
-        },
-        {
             name: 'Bully Maguire Ornament',
             description: 'A Bully Maguire Christmas ornament.',
             image: "/assets/images/bullymaguire.jpg",
@@ -67,13 +60,6 @@ db.once('open', async () => {
             image: "/assets/images/yacht.jpg",
             ticketArray: [],
             timer: 310000
-        },
-        {
-            name: 'Gift Certificate',
-            description: '$50 gift certificate to Taco Bell.',
-            image: "/assets/images/taco-bell.png",
-            ticketArray: [],
-            timer: 300000
         },
         {
             name: 'Dodge Caravan',
