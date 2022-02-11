@@ -60,3 +60,12 @@ export const QUERY_ALL_RAFFLES = gql`
     }
   }
 `;
+
+export const QUERY_TICKET = gql`
+query ticket($ObjectId: String!) {
+  ticket(ObjectId: $ObjectId) {
+    _id
+    username
+  }
+}
+`;

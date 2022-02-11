@@ -6,8 +6,9 @@ import {
   Button,
   Typography,
 } from "@mui/material";
-import { useMutation } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import { ADD_TICKET } from "../../utils/mutations";
+import { QUERY_TICKET } from "../../utils/queries";
 
 function CardStock(props) {
 
@@ -16,11 +17,12 @@ function CardStock(props) {
   let numberOfTickets = ticketArray.length;
   const [addTicket] = useMutation(ADD_TICKET);
 
-
   const findWinner = () => {
-    return ticketArray[
+    var ticket = ticketArray[
       Math.floor(Math.random() * ticketArray.length)
-    ].username;
+    ];
+
+    // const singleTicket = useQuery(QUERY_TICKET);
   };
   
   const handleGetATicketClick = async(event) => {
@@ -29,7 +31,7 @@ function CardStock(props) {
       variables:{
           raffleId: event.target.dataset.raffleid,
       }
-  }) 
+  })
 
     window.location.reload()
     console.log(ticketClick)
@@ -58,7 +60,7 @@ function CardStock(props) {
             Number of Tickets Bought: {numberOfTickets}
           </Typography>
         ) : (
-          <Typography variant="body2">{findWinner()} is the Winner!</Typography>
+          <Typography variant="body2">Raj is the Winner!</Typography>
         )}
       </CardContent>
       <CardActions>
