@@ -37,7 +37,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div>
+        <div style={{position: "relative"}}>
             <Nav />
             <Routes>
             <Route exact path='/' element={<Home/>}/>

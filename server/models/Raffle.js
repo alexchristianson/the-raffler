@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const { Schema } = mongoose;
 
@@ -6,23 +6,23 @@ const raffleSchema = new Schema({
   name: {
     type: String,
     required: true,
-    trim: true
+    trim: true,
   },
   description: {
     type: String,
-    required: true
+    required: true,
   },
   image: {
-    type: String
+    type: String,
   },
-  ticketArray: {
-      type: Array
-  },
-  timer: {
-      type: Number
-  }
+  ticketArray: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Ticket",
+    },
+  ],
 });
 
-const Raffle = mongoose.model('Raffle', raffleSchema);
+const Raffle = mongoose.model("Raffle", raffleSchema);
 
 module.exports = Raffle;

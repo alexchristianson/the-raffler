@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { LOGIN } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
-
+import { Link } from 'react-router-dom'
 
 export default function LoginForm () {
     const [username, setUsername] = useState("");
@@ -71,7 +71,7 @@ export default function LoginForm () {
                 >
                     Submit
                 </Button>
-                <a href='/signup' style={{textDecoration: 'none', paddingTop: 5}}>
+                <Link to='/signup' style={{textDecoration: 'none', paddingTop: 5}}>
                     <Button
                         variant='contained'
                         fullWidth
@@ -79,7 +79,7 @@ export default function LoginForm () {
                     >
                         Create an Account
                     </Button>
-                </a>
+                </Link>
             </form>
         </Grid>
     )

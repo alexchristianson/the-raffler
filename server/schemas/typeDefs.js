@@ -17,12 +17,10 @@ const typeDefs = gql`
     description: String
     image: String
     ticketArray: [Ticket]
-    timer: Int
   }
 
   type Ticket {
     _id: ID!
-    ticketId: Int
     username: User
   }
 
@@ -37,7 +35,7 @@ const typeDefs = gql`
     users: [User]
     user(username: String!): User
     raffleTickets(username: String): [Ticket]
-    raffleTicket(ticketId: Int): Ticket
+    raffleTicket(_id: ID): Ticket
     rafflesWon(username: String): [Raffle]
     raffles: [Raffle]
   }
@@ -46,8 +44,7 @@ const typeDefs = gql`
   type Mutation {
     login(username: String!, password: String!): Auth
     addUser(firstName: String!, lastName: String!, email: String!, username: String!, password: String!): Auth
-    addTicket(ticketId: Int, _id: ID, username: String): Ticket
-    
+    addTicket(raffleId: String!): Ticket
   }
 `;
 

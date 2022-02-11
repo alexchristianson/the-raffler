@@ -3,13 +3,14 @@ import { useState } from 'react';
 import Auth from '../utils/auth';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
+import { Link } from 'react-router-dom';
 
 function SignUpForm () {
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [email, setEmail ] = useState("");
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+    const [firstName, setFirstName] = useState();
+    const [lastName, setLastName] = useState();
+    const [email, setEmail ] = useState();
+    const [username, setUsername] = useState();
+    const [password, setPassword] = useState();
     const [addUser] = useMutation(ADD_USER);
 
     async function handleSignUp(e) {
@@ -26,6 +27,7 @@ function SignUpForm () {
             })
             const token = mutationResponse.data.addUser.token;
             Auth.login(token);
+
         } else {
             alert('Please fill in all sections!')
         }
@@ -109,7 +111,7 @@ function SignUpForm () {
                 >
                     Submit
                 </Button>
-                <a href='/login' style={{textDecoration: 'none', paddingTop: 5}}>
+                <Link to='/login' style={{textDecoration: 'none', paddingTop: 5}}>
                     <Button
                         variant='contained'
                         fullWidth
@@ -117,7 +119,7 @@ function SignUpForm () {
                     >
                         Have an Account? Login
                     </Button>
-                </a>
+                </Link>
             </form>
         </Grid>
     )

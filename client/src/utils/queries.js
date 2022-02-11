@@ -7,7 +7,7 @@ export const QUERY_USER = gql`
       username
       email
       raffleTickets {
-        ticketId
+        _id
       }
     }
   }
@@ -20,30 +20,29 @@ export const QUERY_ME = gql`
       username
       email
       raffleTickets {
-          ticketId
+        _id
       }
     }
   }
 `;
 
 export const QUERY_USERS = gql`
-{
-  users {
-    _id
-    firstName
-    lastName
-    email
-    username
-    raffleTickets {
+  {
+    users {
       _id
-    }
-    rafflesWon {
-      _id
+      firstName
+      lastName
+      email
+      username
+      raffleTickets {
+        _id
+      }
+      rafflesWon {
+        _id
+      }
     }
   }
-}
 `;
-
 
 export const QUERY_ALL_RAFFLES = gql`
   {
@@ -54,14 +53,19 @@ export const QUERY_ALL_RAFFLES = gql`
       image
       ticketArray {
         _id
-        ticketId
         username {
           _id
-          email
-          username
         }
       }
-      timer
     }
   }
+`;
+
+export const QUERY_TICKET = gql`
+query ticket($ObjectId: String!) {
+  ticket(ObjectId: $ObjectId) {
+    _id
+    username
+  }
+}
 `;
