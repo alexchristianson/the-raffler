@@ -34,7 +34,7 @@ function CardStock(props) {
   })
 
     window.location.reload()
-    console.log(ticketClick)
+    
   } catch (err) {
     console.log(err)
   }

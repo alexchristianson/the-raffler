@@ -65,7 +65,6 @@ const resolvers = {
       return { token, user };
     },
     addTicket: async (parent, args, context) => {
-      console.log("hit");
       const { raffleId } = args;
       if (context.user) {
         const ticket = await Ticket.create({ username: context.user.username });
@@ -85,7 +84,6 @@ const resolvers = {
         );
   
         return ticket;
-        console.log(ticket._id);
       }
 
       throw new AuthenticationError("You need to be logged in!");
